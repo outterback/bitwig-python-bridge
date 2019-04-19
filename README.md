@@ -2,7 +2,7 @@
 
 Code to bridge Bitwig Studio 2.5 and Python via a controller extension.
 
-Access the Bitwig Studio Java API from a Python console. Contains code for the Bitwig Controller Extension in Python Bridge/, code for interactivity with python in remote_py/, and a pre-compiled .bwextension file [here](Python Bridge/target/).
+Access the Bitwig Studio Java API from a Python console. Contains code for the Bitwig Controller Extension in Python Bridge/, code for interactivity with python in remote_py/, and a pre-compiled .bwextension file in Python Bridge/target/archive-tmp.
 
 [Video demo on Youtube](https://youtu.be/kZjMfeKIVQY)
 
@@ -28,7 +28,8 @@ This is basically an extremely basic use case of [Py4j](https://www.py4j.org/) a
 
 ## Usage
 
-a) Use the pre-baked extension, located [here](Python Bridge/target/PythonBridge.bwextension)
+a) Use the pre-baked extension, located at Python Bridge/target/PythonBridge.bwextension
+
 b) Compile the plugin yourself by running `mvn install` in the Python Bridge folder.
 
 Copy the PythonBridge.bwextension file to your Bitwig Studio Extensions folder. Add it as a controller script, and enable it. Since it doesn't have any midi ports, it will require you to manually activate it via the power switch icon next to the script name in the list of controllers.
@@ -41,3 +42,4 @@ Run remote_py/example.py in an interactive console, e.g. IPython via the %run ma
 * If you are editing the Java code, recompiling it, and reinitializing it in Java, the gateway server will close. The connection from a running python console will be lost. Just rerun the Python code and it'll be back up*.
 
 * There are some sleep() commands sprinkled in the python code. Sometimes, Bitwig doesn't act until we've asked it to do the next thing. Try removing them and seeing the results. I haven't investigated a different way to mitigate this.
+
