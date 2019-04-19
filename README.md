@@ -2,9 +2,9 @@
 
 Code to bridge Bitwig Studio 2.5 and Python via a controller extension.
 
-Access the Bitwig Studio Java API from a Python console. Contains code for the Bitwig Controller Extension in Python Bridge/, code for interactivity with python in remote_py/, and a pre-compiled .bwextension file in Python Bridge/target/.
+Access the Bitwig Studio Java API from a Python console. Contains code for the Bitwig Controller Extension in Python Bridge/, code for interactivity with python in remote_py/, and a pre-compiled .bwextension file [here](./Python Bridge/target/).
 
-[https://youtu.be/kZjMfeKIVQY](Video demo on Youtube)
+[Video demo on Youtube](https://youtu.be/kZjMfeKIVQY)
 
 ## Dependencies
 Versions stated are the versions I've used. Others may or may not work.
@@ -24,17 +24,17 @@ This is a fun thing to play with as it enables you to automate things you do can
 
 ## How?
 
-This is basically an extremely basic use case of [https://www.py4j.org/](Py4j) applied to the Bitwig Studio Java API. The controller extension just defines a few member variables in the controller script, pointing to interesting objects in Bitwig Studio's API, and then exposes them to Python via the Py4j Bridge. Check the file PythonBridgeExtension.java, it is unnecessarily simple.
+This is basically an extremely basic use case of [Py4j](https://www.py4j.org/) applied to the Bitwig Studio Java API. The controller extension just defines a few member variables in the controller script, pointing to interesting objects in Bitwig Studio's API, and then exposes them to Python via the Py4j Bridge. Check the file PythonBridgeExtension.java, it is unnecessarily simple.
 
 ## Usage
 
-a) Use the pre-baked extension, located at Python Bridge/target/PythonBridge.bwextension
+a) Use the pre-baked extension, located [here](./Python Bridge/target/PythonBridge.bwextension)
 b) Compile the plugin yourself by running `mvn install` in the Python Bridge folder.
 
 Copy the PythonBridge.bwextension file to your Bitwig Studio Extensions folder. Add it as a controller script, and enable it. Since it doesn't have any midi ports, it will require you to manually activate it via the power switch icon next to the script name in the list of controllers.
 
 Two example scripts are provided, they are identical except that one displays how to enable OS global keybindings to scripts done in Python.
-Run remote_py/example.py in an interactive console, e.g. IPython via the %run magic command. If you wish to try the example with keyboard bindings, you will need to run the console with sudo on Linux. [https://pypi.org/project/keyboard/](Details as to why are found here).
+Run remote_py/example.py in an interactive console, e.g. IPython via the %run magic command. If you wish to try the example with keyboard bindings, you will need to run the console with sudo on Linux. Details as to why are found [here](https://pypi.org/project/keyboard/).
 
 ## Troubleshooting & Known Bugs
 
