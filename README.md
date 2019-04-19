@@ -4,6 +4,8 @@ Code to bridge Bitwig Studio 2.5 and Python via a controller extension.
 
 Access the Bitwig Studio Java API from a Python console. Contains code for the Bitwig Controller Extension in Python Bridge/, code for interactivity with python in remote_py/, and a pre-compiled .bwextension file in Python Bridge/target/.
 
+[https://youtu.be/kZjMfeKIVQY](Video demo on Youtube)
+
 ## Dependencies
 Versions stated are the versions I've used. Others may or may not work.
 
