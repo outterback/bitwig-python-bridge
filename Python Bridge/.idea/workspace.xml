@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8bd3d21-d913-4e92-a17d-05a4ca84b58c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_py4j_py4j_0_10_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python-bridge.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../debugger/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../remote_py/example_no_kb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/outterback/PythonBridgeExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/outterback/PythonBridgeExtension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/PythonBridge.bwextension" beforeDir="false" afterPath="$PROJECT_DIR$/target/PythonBridge.bwextension" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/outterback/PythonBridgeExtension.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/outterback/PythonBridgeExtension.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/python-bridge-0.1-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/python-bridge-0.1-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/python-bridge-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/python-bridge-0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/release/python-bridge-0.1-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/release/python-bridge-0.1-jar-with-dependencies.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../debugger/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../remote_py/run_me.py" beforeDir="false" afterPath="$PROJECT_DIR$/../remote_py/run_me.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_py/run_me.py" beforeDir="false" afterPath="$PROJECT_DIR$/../remote_py/example.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,13 +21,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2200">
-              <caret line="110" column="21" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
+            <state relative-caret-position="2186">
+              <caret line="123" column="115" selection-start-line="123" selection-start-column="115" selection-end-line="123" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -30,16 +39,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/outterback/PythonBridgeExtension.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+            <state relative-caret-position="20">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2620#2621#0" expanded="true" />
+                <element signature="e#2657#2658#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -59,23 +77,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Maven__com_bitwig_extension_api_8.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_py4j_py4j_0_10_8_1.xml" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="6" />
-    <option name="y" value="35" />
-    <option name="width" value="1908" />
-    <option name="height" value="1035" />
+    <option name="y" value="55" />
+    <option name="width" value="954" />
+    <option name="height" value="1015" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -125,6 +131,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -180,15 +187,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555677767297</updated>
-      <workItem from="1555677770854" duration="268000" />
+      <workItem from="1555677770854" duration="4219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268000" />
+    <option name="totallyTimeSpent" value="4219000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="6" y="35" width="1908" height="1035" extended-state="0" />
+    <frame x="6" y="55" width="954" height="1015" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -196,7 +203,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12096774" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24834438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -205,7 +212,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3363029" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -227,17 +234,26 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2200">
-          <caret line="110" column="21" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="21" />
+        <state relative-caret-position="2186">
+          <caret line="123" column="115" selection-start-line="123" selection-start-column="115" selection-end-line="123" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/outterback/BridgeContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/outterback/PythonBridgeExtension.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        <state relative-caret-position="20">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2620#2621#0" expanded="true" />
+            <element signature="e#2657#2658#0" expanded="true" />
           </folding>
         </state>
       </provider>

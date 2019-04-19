@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/debugger.iml" filepath="$PROJECT_DIR$/debugger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/remote_py.iml" filepath="$PROJECT_DIR$/.idea/remote_py.iml" />
     </modules>
   </component>
 </project>
