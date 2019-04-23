@@ -3,6 +3,9 @@ from random import randint, random
 from time import sleep
 
 from py4j.java_gateway import JavaGateway
+from rtmidi import MidiIn
+
+
 
 gateway = JavaGateway()
 e = gateway.entry_point
@@ -57,6 +60,7 @@ track_bank = e.getMainTrackBank()
 print("Getting scene bank")
 scene_bank = track_bank.sceneBank()
 
+
 # %%
 def enum_tracks():
     track_bank.scrollPosition().set(0)
@@ -83,7 +87,10 @@ def mess_up_tb():
         for i in range(num_tracks):
             note = randint(24, 72)
             t = track_bank.getItemAt(i)
-            print(f"Track: {t.name().get()}")
+            t_name = t.name().get()
+            if not t_name:
+                break
+            print(f"Track: {t_name}")
             t.startNote(note, 10)
         if not track_bank.canScrollForwards().get():
             break
@@ -105,6 +112,29 @@ def mess_up():
         track.selectNext()
         sleep(0.02)
 
+
+# %%
+def mute_all_tb():
+    print("Muting all")
+    num_tracks = track_bank.getSizeOfBank()
+    track_bank.scrollPosition().set(0)
+    still_has_pages = True
+    while still_has_pages:
+        for i in range(num_tracks):
+            t = track_bank.getItemAt(i)
+            t_name = t.name().get()
+            print(f"Track: {t_name}")
+            if not t_name:
+                break
+            for i in range(128):
+                t.stopNote(i, 100)
+
+        if not track_bank.canScrollForwards().get():
+            print("No more")
+            still_has_pages = False
+        track_bank.scrollPageForwards()
+
+
 # %%
 def mute_all():
     print("Muting all tracks")
@@ -117,6 +147,7 @@ def mute_all():
         track.selectNext()
         sleep(0.02)
 
+
 # %%
 def randomize_parameters():
     print("Randomizing parameters")
@@ -127,7 +158,7 @@ def randomize_parameters():
     for ind in indices:
         remote.selectedPageIndex().set(ind)
         print(f"{remote_pages[ind]}")
-        for rc_ind in range(8): # range(num_parameters)
+        for rc_ind in range(8):  # range(num_parameters)
             control = remote.getParameter(rc_ind)
             val = random()
             print(f" {val:6.2f} -> {control.name().get()}")
@@ -136,17 +167,18 @@ def randomize_parameters():
 
 def make_scale(scale):
     def add_scale():
-
         print('Adding keys: ')
         print(scale)
         clip.scrollToKey(12 * 4)
         clip.scrollToStep(0)
-        #sleep(0.1)
+        # sleep(0.1)
         for n in scale:
             print(n)
             clip.setStep(0, n, 80, 1.0)
 
     return add_scale
+
+
 # %%
 def draw_sequencer():
     clip_content = e.getClipContent()
@@ -155,7 +187,7 @@ def draw_sequencer():
 
     from itertools import product
 
-    output = [" "*w for _ in range(h)]
+    output = [" " * w for _ in range(h)]
     for y in range(h):
         temp = list(output[y])
 
@@ -178,6 +210,7 @@ minor_scale = make_scale([0, 2, 3, 5, 7, 8, 11])
 
 import asyncio
 
+
 async def listen_for_triggered():
     trig = e.getClipsTriggered()
     while True:
@@ -186,7 +219,7 @@ async def listen_for_triggered():
             print(tc)
             if tc == "[mute_all]":
                 print("mute")
-                mute_all()
+                mute_all_tb()
             elif tc == "[mess_up]":
                 print("mess")
                 mess_up_tb()
@@ -195,9 +228,38 @@ async def listen_for_triggered():
         except:
             pass
 
-# listen_for_triggered()
 
-asyncio.run(listen_for_triggered())
+    # listen_for_triggered()
 
-print("Hello")
-print("HEEEELLO")
+if False:
+    asyncio.run(listen_for_triggered())
+
+# %%
+
+
+def clip_put_step(note, velocity=80):
+    clip.setStep(clip_put_step.step, note, velocity, 0.25)
+    clip_put_step.step += 1
+clip_put_step.step = 0
+
+from rtmidi.midiutil import open_midiinput
+
+
+m_in = MidiIn()
+ports = m_in.get_port_count()
+for p in range(ports):
+    print(m_in.get_port_name(p))
+print()
+m_in.open_port(1)
+
+while True:
+    msg = m_in.get_message()
+    if msg:
+        print(msg)
+        midi_msg = msg[0]
+
+        if midi_msg[0] == 144:
+            note = midi_msg[1]
+            print(note)
+            clip_put_step(note)
+
